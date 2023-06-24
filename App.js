@@ -8,12 +8,12 @@ const heading = React.createElement(
 
 console.log(heading);
 const child2 = React.createElement("div", { id: "child2" }, [
-  React.createElement("h1", { id: "heading1" }, ""),
-  React.createElement("h2", { id: "heading2" }, ""),
+  React.createElement("h1", { id: "heading1" }, "i am h1 tag"),
+  React.createElement("h2", { id: "heading2" }, "i am h2 tag"),
 ]);
 const child1 = React.createElement("div", { id: "child1" }, [
-  React.createElement("h1", { id: "heading3" }, ""),
-  React.createElement("h2", { id: "heading4" }, ""),
+  React.createElement("h1", { id: "heading3" }, "i am h1 tag"),
+  React.createElement("h2", { id: "heading4" }, "i am h2 tag"),
 ]);
 const body = React.createElement("div", { id: "parent" }, [child1, child2]);
 
