@@ -1,0 +1,108 @@
+1) What is Emmet?
+
+- Emmet is a plug in for many popular text editors which greatly improves HTML & CSS workflow.
+- While typing the Emmet Abbreviations, you can press Ctrl + Space see what will be generated
+-The general way to write Emmet abbreviation is:
+
+tagName[series of expressions]
+
+Where tagName: is the HTML tag you want to generate
+
+Series of expressions will govern the markup that will be generated.
+
+examples
+Generating HTML Skeleton:
+-div{This is a div}
+-ul>li
+-ul>li*3>a
+-ul>li{$}*3
+-div#main.container.responsive
+-div#main#main-body.container.responsive
+
+2) What is difference between library and framework?
+
+- The technical difference between a framework and library lies in a term called inversion of control.
+
+- When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
+
+example: jQuery (a library) and Vue.js (a framework).
+
+3) What is a CDN?
+
+A content delivery network (CDN) is a geographically distributed group of servers that caches content close to end users. A CDN allows for the quick transfer of assets needed for loading Internet content, including HTML pages, JavaScript files, stylesheets, images, and videos.
+
+The popularity of CDN services continues to grow, and today the majority of web traffic is served through CDNs, including traffic from major sites like Facebook, Netflix, and Amazon.
+A properly configured CDN may also help protect websites against some common malicious attacks, such as Distributed Denial of Service (DDOS) attacks.
+
+While a CDN does not host content and can’t replace the need for proper web hosting, it does help cache content at the network edge, which improves website performance. Many websites struggle to have their performance needs met by traditional hosting services, which is why they opt for CDNs.
+
+By utilizing caching to reduce hosting bandwidth, helping to prevent interruptions in service, and improving security, CDNs are a popular choice to relieve some of the major pain points that come with traditional web hosting.
+
+Why do we use it? 
+
+Improving website load times 
+Reducing bandwidth costs 
+Increasing content availability and redundancy 
+Improving website security 
+
+4) Why is React called React?
+
+React is called React because it is a library that reacts to changes in data and updates the user interface accordingly.
+- It was originally developed by Facebook and was released as an open-source project in 2013. 
+- The name "React" reflects its purpose of reacting to changes in data and rendering the appropriate changes in the user interface.
+
+5) What is cross-origin in the script tag ?
+
+- The HTML <script> crossorigin Attribute is used for loading an external script into their domain from a third party server or 
+another domain with the support of HTTP CORS Request. This attribute is used to protect sensitive information from the third 
+party when fetching out the results.
+
+- Cross-Origin Resource Sharing(CORS) is a tool that allows web pages requesting for resources from another domain that is outside 
+of their own domain. It is also used for managing cross-origin requests which is a request for a resource from an outside domain.
+
+6) What is the difference between React and ReactDOM ?
+
+- ReactDOM is the glue between React and the DOM. 
+- Often, you will only use it for one single thing: mounting with ReactDOM.render(). 
+- Another useful feature of ReactDOM is ReactDOM.findDOMNode() which you can use to gain direct access to a DOM element. 
+(Something you should use sparingly in React apps, but it can be necessary.) 
+If your app is "isomorphic", you would also use ReactDOM.renderToString() in your back-end code.
+
+- For everything else, there's React. You use React to define and create your elements, for lifecycle hooks, etc. i.e. the guts of a React application.
+
+- The reason React and ReactDOM were split into two libraries was due to the arrival of React Native. 
+React contains functionality utilised in web and mobile apps. ReactDOM functionality is utilised only in web apps.
+
+7) The difference between react.development.js and react.production.js files via CDN ?
+
+The React library provides two versions of its JavaScript files: react.development.js and react.production.js. These files serve different purposes and are typically used in different stages of the development and deployment process. When serving these files via a Content Delivery Network (CDN), there are a few key differences between them:
+
+File Size: The react.development.js file is typically larger in size compared to react.production.js. The development version contains additional code, comments, and debugging information that aids in development and troubleshooting. On the other hand, the production version is optimized for performance and has undergone various optimizations, including minification and removal of unnecessary code, resulting in a smaller file size.
+
+Performance: The production version (react.production.js) is optimized for performance and is typically used in production environments. It includes various optimizations, such as dead code elimination, to make the React library run more efficiently. These optimizations help reduce the overall bundle size, improve runtime performance, and enhance the user experience.
+
+Error Messages: The development version (react.development.js) provides more detailed error messages and warnings compared to the production version. This helps developers identify and diagnose issues during the development process. The development version includes additional checks and warnings to provide useful information when something goes wrong. However, these additional checks and messages are not included in the production version for performance reasons.
+
+When using a CDN, it's common to load the development version (react.development.js) during development and debugging stages. This allows developers to take advantage of the detailed error messages and warnings provided by the development version for easier debugging. However, in production environments, it is recommended to use the production version (react.production.js) for better performance and reduced file size.
+
+It's worth noting that the specific file names (react.development.js and react.production.js) may vary depending on the version and release of React you are using.
+
+8) What are async and defer attributes ?
+
+The async and defer attributes are used when including external JavaScript files in an HTML document. They control how the browser handles the downloading and execution of these scripts. Here's the difference between them:
+
+async attribute:
+
+When you include a <script> tag with the async attribute, the browser will start downloading the script file immediately without blocking the HTML parsing.
+As soon as the script finishes downloading, it will be executed, regardless of whether the HTML parsing is complete or not.
+If there are multiple scripts with the async attribute, they may be downloaded and executed in parallel. The order of execution depends on the download completion, which may result in scripts executing out of order.
+The async attribute is typically used for scripts that don't have dependencies on other scripts or the DOM structure, as they can execute as soon as they're downloaded.
+defer attribute:
+
+When you include a <script> tag with the defer attribute, the browser will also start downloading the script file without blocking the HTML parsing.
+However, the script execution is deferred until the HTML parsing is complete.
+Multiple scripts with the defer attribute will maintain their original order of appearance in the document and execute in the same order.
+The defer attribute is useful when scripts depend on the DOM structure or other scripts. It ensures that scripts are executed in the order they appear in the HTML document, allowing them to safely access and manipulate the DOM.
+In summary, the async attribute allows scripts to be downloaded and executed asynchronously, without blocking the HTML parsing, while the defer attribute allows scripts to be downloaded without blocking, but defers their execution until the HTML parsing is complete, preserving their order of appearance.
+
+It's important to consider the behavior and dependencies of your scripts when deciding which attribute to use. If scripts have dependencies or rely on the DOM, using defer is often a better choice. If scripts are independent or have minimal dependencies, and their execution order is not critical, async can lead to faster script loading and execution.
