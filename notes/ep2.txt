@@ -1,6 +1,6 @@
-package.json is a configuration for npm
+=> package.json is a configuration for npm
 
-NPM versions are written using three dots separated numbers the first number from the left shows 
+=> NPM versions are written using three dots separated numbers the first number from the left shows 
 the major release and the second number from the left shows the minor release and the third number
  shows the patch release of the package.
 
@@ -20,3 +20,8 @@ Example: The ^1.2.4 will update all the future Minor and patch updates,
 for example, ^1.2.4 will automatically change the dependency to 1.x.x if any update occurs.
 
 Using caret notation it is important to look at our code regularly if it is compatible with the newest version or not.
+
+=> npx means executing a package
+eg: npx parcel index.html
+
+=> CDN links is the not prefered way as its a costly operation.
