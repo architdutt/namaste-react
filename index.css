@@ -48,6 +48,7 @@
 .search {
     /* margin: 10px; */
     padding: 10px;
+    display: flex;
 }
 
 .res-logo {
@@ -55,4 +56,23 @@
     height: 100px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin: 5px;
+    background-color: beige;
+    animation: shimmer 1s ease-in-out infinite;
+}
+
+.login-btn{
+    padding: 0 20px;
+    cursor: pointer;
 }
