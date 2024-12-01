@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { restObj } from "../../resturants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -9,7 +10,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const filterRes = () => {
-    setRestaurants(restaurants.filter((res) => res.info.avgRating >= 4.5));
+    setFilteredRestaurants(
+      restaurants.filter((res) => res.info.avgRating >= 4.5)
+    );
   };
 
   const fetchData = async () => {
@@ -68,7 +71,10 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurants?.map((res) => (
-          <RestaurantCard key={res.info.id} resData={res} />
+          <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
+            {" "}
+            <RestaurantCard resData={res} />
+          </Link>
         ))}
       </div>
     </div>
