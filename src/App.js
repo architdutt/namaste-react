@@ -8,6 +8,7 @@ import Contacts from "./components/Contacts";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { AboutClass } from "./components/AboutClass";
 
 // const Burgers = {
 //   info: {
@@ -195,7 +196,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: <AboutClass />,
       },
       {
         path: "/contact",

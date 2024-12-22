@@ -1,12 +1,25 @@
-// import React from "react";
+import React from "react";
+import { UserClass } from "./UserClass";
+export class AboutClass extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("AboutClass constructor");
+  }
 
-// class UserClass extends React.Component {
+  componentDidMount() {
+    console.log("AboutClass componentDidMount");
+  }
 
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             name: props.name,
-//             location: props.age
-//         };
-
-// }
+  render() {
+    console.log("AboutClass render");
+    return (
+      <>
+        <div>About Class component</div>
+        <UserClass
+          username={"Archit Dutt Sharma Class"}
+          location={"Dehradun class"}
+        />
+      </>
+    );
+  }
+}
