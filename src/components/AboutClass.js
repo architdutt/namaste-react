@@ -1,6 +1,6 @@
 import React from "react";
 import { UserClass } from "./UserClass";
-export class AboutClass extends React.Component {
+class AboutClass extends React.Component {
   constructor(props) {
     super(props);
     console.log("AboutClass constructor");
@@ -23,3 +23,5 @@ export class AboutClass extends React.Component {
     );
   }
 }
+
+export default AboutClass;
