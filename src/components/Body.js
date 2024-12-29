@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { restObj } from "../../resturants";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withQuickDelivery } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "../utils/useOnlineStatus";
@@ -11,6 +11,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardWithQuickDelivery = withQuickDelivery(RestaurantCard);
 
   const filterRes = () => {
     setFilteredRestaurants(
@@ -23,10 +25,10 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9063433&lng=77.5856825&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await data.json();
-    console.log(
-      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
+    // console.log(
+    //   "info",
+    //   jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+    // );
     setRestaurants(
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -90,7 +92,11 @@ const Body = () => {
         {filteredRestaurants?.map((res) => (
           <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
             {" "}
-            <RestaurantCard resData={res} />
+            {res.info.sla.deliveryTime < 30 ? (
+              <RestaurantCardWithQuickDelivery resData={res} />
+            ) : (
+              <RestaurantCard resData={res} />
+            )}
           </Link>
         ))}
       </div>

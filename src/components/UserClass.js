@@ -44,26 +44,26 @@ export class UserClass extends React.Component {
         updated_at: "2024-12-22T08:40:08Z",
       },
     };
-    console.log("UserClass constructor");
+    // console.log("UserClass constructor");
   }
 
   async componentDidMount() {
-    console.log("UserClass componentDidMount");
+    // console.log("UserClass componentDidMount");
     const data = await fetch("https://api.github.com/users/architdutt");
     const userData = await data.json();
     this.setState({ userInfo: userData });
   }
 
   componentDidUpdate() {
-    console.log("UserClass componentDidUpdate");
+    // console.log("UserClass componentDidUpdate");
   }
 
   componentWillUnmount() {
-    console.log("UserClass componentWillUnmount");
+    // console.log("UserClass componentWillUnmount");
   }
 
   render() {
-    console.log("UserClass render");
+    // console.log("UserClass render");
     const { userInfo } = this.state;
     return (
       <>

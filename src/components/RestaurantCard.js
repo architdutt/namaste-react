@@ -23,4 +23,17 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withQuickDelivery = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <>
+        <label className="absolute bg-slate-600 p-2 m-2 rounded-lg text-amber-100">
+          Quick Delivery
+        </label>
+        <RestaurantCard {...props} />
+      </>
+    );
+  };
+};
+
 export default RestaurantCard;
